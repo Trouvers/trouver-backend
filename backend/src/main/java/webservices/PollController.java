@@ -16,6 +16,6 @@ import models.PollResponse;
 public class PollController {
 	@PostMapping(value=URL.POLL)
 	ResponseEntity<PollResponse> createPoll(@RequestBody PollRequest request){
-		return null;
+		
 	}
 }
