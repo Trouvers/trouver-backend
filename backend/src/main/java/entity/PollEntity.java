@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name="Book")
+@Table(name="PollEntity")
 @Data
 @NoArgsConstructor
 public class PollEntity {
@@ -17,8 +17,9 @@ public class PollEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int pollId;
 
-
-    private int userId;
+    @ManyToOne
+    @JoinColumn(name="userId")
+    private User user;
 
     @Column(name="createdAt")
     private Timestamp createdAt;

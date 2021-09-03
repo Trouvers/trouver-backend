@@ -10,16 +10,17 @@ import javax.validation.Valid;
 import java.sql.Timestamp;
 import java.util.List;
 
-@Setter
+
 @Getter
+@Setter
 @ToString
 public class PollRequest {
 
-    @Valid
+   
     private String question;
 
     @Valid
-    private Object options;
+    private String options;
 
     @Valid
     private long userId;
