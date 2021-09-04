@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name="PollEntity")
@@ -49,6 +50,6 @@ public class PollEntity {
     private String voteShare;
 
     @Column(name="tags")
-    private String tags;
+    private List<String> tags;
 
 }

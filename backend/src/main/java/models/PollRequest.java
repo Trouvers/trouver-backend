@@ -16,7 +16,7 @@ import java.util.List;
 @ToString
 public class PollRequest {
 
-   
+    @Valid
     private String question;
 
     @Valid

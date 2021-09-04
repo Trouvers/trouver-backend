@@ -1,7 +1,8 @@
 package services;
 
 import entity.PollEntity;
+import models.PollRequest;
 
 public interface PollService{
-	void createPoll(PollEntity pollEntity);
+	PollEntity createPoll(PollRequest pollRequest);
 }
