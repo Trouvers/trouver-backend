@@ -1,5 +1,7 @@
 package services;
 
-public interface UserService {
+import entity.User;
 
+public interface UserService {
+	public User getUserById(long id);
 }

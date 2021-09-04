@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 public class User {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="userId", nullable=false)
 	private long userId;
 	
@@ -42,13 +42,3 @@ public class User {
 	@OneToMany(mappedBy="user")
 	List<PollEntity> polls; 
 }
-
-/**
- * 1, User Id
-2. UserName
-3.Email
-4.Phone Number
-5.User Type
-6.Interest.
-
- */
