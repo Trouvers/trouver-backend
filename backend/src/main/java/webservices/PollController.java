@@ -25,6 +25,7 @@ public class PollController {
 	
 	@PostMapping(value=URL.POLL)
 	ResponseEntity<PollResponse> createPoll(@RequestBody PollRequest request){
+		
 		PollEntity pollEntity = pollService.createPoll(request);
 		PollResponse pollResponse = new PollResponse();
 		pollResponse.setResultCode(ResultCode.SUCCESS);
