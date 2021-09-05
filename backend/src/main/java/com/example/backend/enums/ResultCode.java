@@ -1,4 +1,4 @@
-package enums;
+package com.example.backend.enums;
 
 public enum ResultCode {
 	SUCCESS("EOS_0000", "S", "Success", "SUCCESS");

@@ -1,12 +1,15 @@
-package services;
+package com.example.backend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import entity.PollEntity;
-import models.PollRequest;
-import repository.PollRepository;
-import helper.PollHelper;
+import com.example.backend.entity.PollEntity;
+import com.example.backend.models.PollRequest;
+import com.example.backend.repository.PollRepository;
+import com.example.backend.helper.PollHelper;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PollServiceImpl implements PollService{
 
 	@Autowired
