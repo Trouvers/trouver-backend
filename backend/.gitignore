@@ -34,4 +34,4 @@ build/
 
 ## Backend ###
 pom.xml
-application.properties
+src/main/resources/application.properties
