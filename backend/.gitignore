@@ -33,5 +33,5 @@ build/
 .vscode/
 
 ## Backend ###
-**/backend/pom.xml
-**/backend/src/main/resources/application.properties
+pom.xml
+application.properties
