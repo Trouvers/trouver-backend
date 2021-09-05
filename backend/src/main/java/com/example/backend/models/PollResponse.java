@@ -1,5 +1,6 @@
 package com.example.backend.models;
 
+import com.example.backend.entity.PollEntity;
 import com.example.backend.enums.ResultCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,12 +16,8 @@ import javax.validation.Valid;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PollResponse {
-
-//    @Valid
-//    private int pollId;
-//
-//    @Valid
-//    private PollRequest pollRequest;
+    @Valid
+    private PollEntity pollEntity;
 
     @Valid
     private ResultCode resultCode;

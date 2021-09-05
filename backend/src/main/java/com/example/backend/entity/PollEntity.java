@@ -1,5 +1,6 @@
 package com.example.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,8 +20,9 @@ public class PollEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int pollId;
 
-    @ManyToOne
-    @JoinColumn(name="userId")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "userId")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private User user;
 
     @Column(name="createdAt")

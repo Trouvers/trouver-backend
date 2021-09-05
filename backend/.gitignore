@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+## Backend ###
+pom.xml
+src/main/resources/application.properties
