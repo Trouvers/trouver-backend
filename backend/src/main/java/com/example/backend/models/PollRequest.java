@@ -1,4 +1,4 @@
-package models;
+package com.example.backend.models;
 
 
 import lombok.Data;
@@ -35,7 +35,7 @@ public class PollRequest {
     private String url;
 
     @Valid
-    private List<String> tags;
+    private String tags;
 
     @Valid
     private boolean isModified;

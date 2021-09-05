@@ -1,4 +1,4 @@
-package helper;
+package com.example.backend.helper;
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -6,10 +6,10 @@ import java.time.Instant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import entity.PollEntity;
-import entity.User;
-import models.PollRequest;
-import services.UserServiceImpl;
+import com.example.backend.entity.PollEntity;
+import com.example.backend.entity.User;
+import com.example.backend.models.PollRequest;
+import com.example.backend.services.UserServiceImpl;
 
 @Component
 public class PollHelper {

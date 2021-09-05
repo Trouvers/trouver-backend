@@ -1,4 +1,4 @@
-package entity;
+package com.example.backend.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="PollEntity")
@@ -50,6 +51,6 @@ public class PollEntity {
     private String voteShare;
 
     @Column(name="tags")
-    private List<String> tags;
+    private String tags;
 
 }

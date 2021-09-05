@@ -1,8 +1,8 @@
-package repository;
+package com.example.backend.repository;
 
 import org.springframework.stereotype.Repository;
 
-import entity.PollEntity;
+import com.example.backend.entity.PollEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

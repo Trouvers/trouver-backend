@@ -1,12 +1,12 @@
-package services;
+package com.example.backend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import entity.User;
-import repository.UserRepository;
+import com.example.backend.entity.User;
+import com.example.backend.repository.UserRepository;
 
-@Service("UserServiceImpl")
+@Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired

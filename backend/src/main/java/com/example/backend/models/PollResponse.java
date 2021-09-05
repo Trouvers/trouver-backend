@@ -1,16 +1,13 @@
-package models;
+package com.example.backend.models;
 
-import enums.ResultCode;
+import com.example.backend.enums.ResultCode;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.Valid;
-import java.sql.Timestamp;
-import java.util.List;
 
 @Setter
 @Getter
