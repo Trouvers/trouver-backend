@@ -2,10 +2,7 @@ package com.example.backend.webservices;
 
 import com.example.backend.config.URL;
 import com.example.backend.core.object.WrappedPollResponse;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +23,15 @@ public class PollController {
 	@PostMapping(value = URL.POLL)
 	ResponseEntity<PollResponse> createPoll(@RequestBody PollRequest request){
 		WrappedPollResponse wrappedPollResponse = pollService.createPoll(request);
+		PollResponse pollResponse = new PollResponse();
+		pollResponse.setIPollResponse(wrappedPollResponse.getResponse());
+		pollResponse.setResultCode(wrappedPollResponse.getResultCode());
+		return new ResponseEntity<>(pollResponse, HttpStatus.OK);
+	}
+
+	@DeleteMapping(value=URL.POLL_DELETE)
+	ResponseEntity<PollResponse> deletePoll(@PathVariable("id") long id) {
+		WrappedPollResponse wrappedPollResponse = pollService.deletePoll(id);
 		PollResponse pollResponse = new PollResponse();
 		pollResponse.setIPollResponse(wrappedPollResponse.getResponse());
 		pollResponse.setResultCode(wrappedPollResponse.getResultCode());
