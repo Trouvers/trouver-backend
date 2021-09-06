@@ -40,6 +40,13 @@ public class PollServiceImpl implements PollService{
 	@Override
 	public WrappedPollResponse getAllPoll() {
 		List<PollEntity> pollEntities = pollRepository.findAll();
-		return new WrappedPollResponse(pollEntities,ResultCode.SUCCESS);
+		return new WrappedPollResponse(pollEntities, ResultCode.SUCCESS);
+	}
+	@Override
+	public WrappedPollResponse deletePoll(long id) {
+		PollEntity pollEntity = pollRepository.getById(id);
+		pollRepository.deleteById(id);
+		return new WrappedPollResponse<>(pollEntity, ResultCode.SUCCESS);
+
 	}
 }
