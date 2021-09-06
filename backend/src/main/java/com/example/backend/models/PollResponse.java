@@ -10,6 +10,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Setter
 @Getter
@@ -21,6 +22,14 @@ public class PollResponse {
     private IPollResponse iPollResponse;
 
     @Valid
+    private List<IPollResponse> iPollResponses;
+
+    @Valid
     private ResultCode resultCode;
+
+    public PollResponse(List<IPollResponse> iPollResponses,ResultCode resultCode){
+        this.iPollResponses  = iPollResponses;
+        this.resultCode = resultCode;
+    }
 }
 

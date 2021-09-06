@@ -12,6 +12,8 @@ import com.example.backend.helper.PollHelper;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PollServiceImpl implements PollService{
 
@@ -30,9 +32,21 @@ public class PollServiceImpl implements PollService{
 	}
 
 	@Override
+	public WrappedPollResponse getPollById(long id) {
+		PollEntity pollEntityResponse = pollRepository.getById(id);
+		return new WrappedPollResponse<>(pollEntityResponse,ResultCode.SUCCESS);
+	}
+
+	@Override
+	public WrappedPollResponse getAllPoll() {
+		List<PollEntity> pollEntities = pollRepository.findAll();
+		return new WrappedPollResponse(pollEntities, ResultCode.SUCCESS);
+	}
+	@Override
 	public WrappedPollResponse deletePoll(long id) {
 		PollEntity pollEntity = pollRepository.getById(id);
 		pollRepository.deleteById(id);
 		return new WrappedPollResponse<>(pollEntity, ResultCode.SUCCESS);
+
 	}
 }
