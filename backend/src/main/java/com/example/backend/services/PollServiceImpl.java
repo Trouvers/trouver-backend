@@ -28,4 +28,11 @@ public class PollServiceImpl implements PollService{
 		PollEntity pollEntityResponse = pollRepository.save(pollEntity);
 		return new WrappedPollResponse<>(pollEntityResponse, ResultCode.SUCCESS);
 	}
+
+	@Override
+	public WrappedPollResponse deletePoll(long id) {
+		PollEntity pollEntity = pollRepository.getById(id);
+		pollRepository.deleteById(id);
+		return new WrappedPollResponse<>(pollEntity, ResultCode.SUCCESS);
+	}
 }
