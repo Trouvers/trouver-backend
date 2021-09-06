@@ -1,5 +1,6 @@
 package com.example.backend.entity;
 
+import com.example.backend.core.object.IPollResponse;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.Set;
 @Table(name="PollEntity")
 @Data
 @NoArgsConstructor
-public class PollEntity {
+public class PollEntity implements IPollResponse {
 
     @Id
     @Column(name="pollId")

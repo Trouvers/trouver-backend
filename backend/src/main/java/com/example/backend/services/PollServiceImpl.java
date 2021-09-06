@@ -1,5 +1,8 @@
 package com.example.backend.services;
 
+import com.example.backend.core.object.IPollResponse;
+import com.example.backend.core.object.WrappedPollResponse;
+import com.example.backend.enums.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.backend.entity.PollEntity;
@@ -19,9 +22,10 @@ public class PollServiceImpl implements PollService{
 	private PollRepository pollRepository;
 	
 	@Override
-	public PollEntity createPoll(PollRequest pollRequest) {
+	public WrappedPollResponse createPoll(PollRequest pollRequest) {
 		// TODO Auto-generated method stub
 		PollEntity pollEntity = pollHelper.convertPollRequestToPollEntity(pollRequest);
-		return pollRepository.save(pollEntity);
+		PollEntity pollEntityResponse = pollRepository.save(pollEntity);
+		return new WrappedPollResponse<>(pollEntityResponse, ResultCode.SUCCESS);
 	}
 }
