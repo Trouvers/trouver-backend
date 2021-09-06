@@ -19,7 +19,7 @@ public class PollEntity implements IPollResponse {
     @Id
     @Column(name="pollId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int pollId;
+    private long pollId;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "userId")
