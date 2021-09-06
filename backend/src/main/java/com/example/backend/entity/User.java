@@ -1,5 +1,6 @@
 package com.example.backend.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name="users")
 @Data
 @NoArgsConstructor
-public class User {
+public class User implements Serializable {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)

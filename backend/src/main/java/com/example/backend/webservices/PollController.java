@@ -1,6 +1,7 @@
 package com.example.backend.webservices;
 
 import com.example.backend.config.URL;
+import com.example.backend.core.object.WrappedPollResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,10 +25,10 @@ public class PollController {
 	
 	@PostMapping(value = URL.POLL)
 	ResponseEntity<PollResponse> createPoll(@RequestBody PollRequest request){
-		PollEntity pollEntity = pollService.createPoll(request);
+		WrappedPollResponse wrappedPollResponse = pollService.createPoll(request);
 		PollResponse pollResponse = new PollResponse();
-		pollResponse.setPollEntity(pollEntity);
-		pollResponse.setResultCode(ResultCode.SUCCESS);
+		pollResponse.setIPollResponse(wrappedPollResponse.getResponse());
+		pollResponse.setResultCode(wrappedPollResponse.getResultCode());
 		return new ResponseEntity<>(pollResponse, HttpStatus.OK);
 	}
 }

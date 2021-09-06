@@ -1,7 +1,7 @@
 package com.example.backend.enums;
 
 public enum ResultCode {
-	SUCCESS("EOS_0000", "S", "Success", "SUCCESS");
+	SUCCESS("EOS_0000", "S", "Success", "SUCCESS"), FAIL("EOS_0001", "F", "Fail", "FAIL");
 	private String resultCodeId;
 	 private String resultCode;
 	private String resultMsg;
